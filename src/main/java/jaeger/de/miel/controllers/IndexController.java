@@ -12,6 +12,7 @@ public class IndexController {
 
     @RequestMapping("/hello")
     public Hello hello(@RequestParam(name="name", defaultValue = "world") String name) {
+        System.out.println("Hello from /hello endpoint");
         Hello h = new Hello();
         if (name.isEmpty()) h.setGreeting("Hello world");
         else h.setGreeting("Hello " + name);
@@ -20,7 +21,14 @@ public class IndexController {
 
     @RequestMapping("/ping")
     public String ping() {
+        System.out.println("Hello from /ping endpoint");
         return "pong";
+    }
+
+    @RequestMapping("/helloworld-api")
+    public String root() {
+        System.out.println("Hello from / endpoint (root)");
+        return "root";
     }
 
 }
