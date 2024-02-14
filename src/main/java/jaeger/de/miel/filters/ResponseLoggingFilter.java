@@ -16,8 +16,8 @@ public class ResponseLoggingFilter implements Filter {
 
         byte[] responseArray = responseWrapper.getContentAsByteArray();
         String responseStr = new String(responseArray, responseWrapper.getCharacterEncoding());
-
-        servletRequest.getServletContext().log("HelloWorldAPI response: " + responseStr);
+        int statusCode = ((HttpServletResponse) servletResponse).getStatus();
+        servletRequest.getServletContext().log("HelloWorldAPI response: " + statusCode + " " + responseStr);
 
         responseWrapper.copyBodyToResponse();
     }
