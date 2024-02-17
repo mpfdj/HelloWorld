@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloWorldAPI - index</title>
+
+    <script th:inline="javascript">
+        function callEndpoint(endpoint) {
+            if (endpoint === 'ping') window.location.href = '/helloworld-api/ping';
+            if (endpoint === 'hello') window.location.href = '/helloworld-api/hello';
+            if (endpoint === 'helloMiel') window.location.href = '/helloworld-api/hello?name=Miel';
+        }
+
+    </script>
+</head>
+<body>
+<ul>
+    <li><a href="#" th:onclick="callEndpoint('ping')">[/helloworld-api/ping]</a></li>
+    <li><a href="#" th:onclick="callEndpoint('hello')">[/helloworld-api/hello]</a></li>
+    <li><a href="#" th:onclick="callEndpoint('helloMiel')">[/helloworld-api/hello?name=Miel]</a></li>
+</ul>
+</body>
+</html>

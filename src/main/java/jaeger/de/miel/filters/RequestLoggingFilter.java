@@ -17,7 +17,7 @@ public class RequestLoggingFilter extends ServletContextRequestLoggingFilter  {
 
     public RequestLoggingFilter() {
         this.setIncludeQueryString(true);
-        this.setIncludeHeaders(true);
+        this.setIncludeHeaders(false);
         this.setBeforeMessagePrefix("HelloWorldAPI request: ");
         this.setBeforeMessageSuffix("");
     }
