@@ -18,8 +18,8 @@ http://localhost:8080/ping
 
 # Docker
 # https://docs.docker.com/engine/reference/commandline/image_tag/
-docker image build --no-cache --file Dockerfile --tag java/helloworld-api:1.0.0 .
-docker container run --rm --privileged -p 8080:8080 java/helloworld-api:1.0.0
+docker image build --no-cache --file Dockerfile --tag miel1980/helloworld-api:1.0.0 .
+docker container run --rm --privileged -p 8080:8080 miel1980/helloworld-api:1.0.0
 
 
 
